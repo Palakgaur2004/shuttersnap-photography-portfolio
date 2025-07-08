@@ -18,7 +18,6 @@ export default function Navbar() {
         position: 'fixed',
         top: 0,
         left: 0,
-
         width: '97%',
         zIndex: 1000,
         display: 'flex',
@@ -31,8 +30,8 @@ export default function Navbar() {
         boxShadow: scrolled ? '0 4px 12px rgba(0, 0, 0, 0.1)' : 'none',
       }}
     >
-      {/* Logo */}
-      <h1 style={{ fontSize: '1.5rem', margin: 0 }}>
+      {/* Logo/Brand */}
+      <h1 style={{ fontSize: '1.8rem', margin: 0 }}>
         <span style={{
           fontFamily: `'Pacifico', cursive`,
           color: scrolled ? '#000' : '#fff'
@@ -46,17 +45,23 @@ export default function Navbar() {
       {/* Navigation Links */}
       <ul style={{
         display: 'flex',
-        gap: '1rem',
+        gap: '1.2rem',
         listStyle: 'none',
         margin: 0,
         padding: 0,
         flexWrap: 'wrap',
-        justifyContent: 'center'
+        alignItems: 'center'
       }}>
-        {['Home', 'Services', 'Gallery', 'Contact'].map((item, index) => (
+        {[
+          { label: 'Home', path: '/' },
+          { label: 'Services', path: '/services' },
+          { label: 'Gallery', path: '/gallery' },
+          { label: 'FAQ', path: '/faq' },
+          { label: 'Contact / Booking', path: '/contact' },
+        ].map((item, index) => (
           <li key={index}>
             <a
-              href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+              href={item.path}
               style={{
                 color: scrolled ? '#000' : '#fff',
                 textDecoration: 'none',
@@ -65,7 +70,7 @@ export default function Navbar() {
                 padding: '0.3rem 0.6rem',
               }}
             >
-              {item}
+              {item.label}
             </a>
           </li>
         ))}
