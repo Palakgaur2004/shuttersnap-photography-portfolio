@@ -1,5 +1,6 @@
 import './globals.css'
 
+
 export const metadata = {
   title: 'ShutterSnap Photography',
   description: 'Capturing stories through the lens.',
