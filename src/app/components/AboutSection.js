@@ -1,4 +1,6 @@
 // components/AboutSection.js
+import Image from 'next/image'
+
 export default function AboutSection() {
   return (
     <section style={{
@@ -10,7 +12,7 @@ export default function AboutSection() {
       alignItems: 'center',
       gap: '3rem'
     }}>
-      
+
       {/* Left Side Content */}
       <div style={{
         flex: '1 1 450px',
@@ -22,7 +24,7 @@ export default function AboutSection() {
           fontWeight: 'bold',
           color: '#222',
         }}>
-          Welcome to <span style={{ fontFamily: `'Pacifico', cursive` }}>Shutter</span><span>Snap</span>
+          Welcome to <span style={{ fontFamily: `"Pacifico", cursive` }}>Shutter</span><span>Snap</span>
         </h2>
 
         <p style={{
@@ -39,7 +41,7 @@ export default function AboutSection() {
           color: '#666',
           marginTop: '1.5rem',
         }}>
-          📌 We don’t just take photos — we preserve memories that matter. Our approach blends artistic storytelling with technical excellence, ensuring every image tells a tale you'll want to relive again and again.
+          📌 We don’t just take photos — we preserve memories that matter. Our approach blends artistic storytelling with technical excellence, ensuring every image tells a tale you’ll want to relive again and again.
         </p>
 
         <div style={{ marginTop: '2rem' }}>
@@ -64,7 +66,7 @@ export default function AboutSection() {
       <div style={{
         flex: '0.3 1 400px',
         textAlign: 'center',
-         marginLeft: 'auto' ,
+        marginLeft: 'auto',
         alignSelf: 'flex-start'
       }}>
         <h3 style={{
@@ -72,19 +74,20 @@ export default function AboutSection() {
           fontWeight: '500',
           marginBottom: '1rem',
           color: '#333',
-        
         }}>
-          Meet the Faces Behind ShutterSnap 
+          Meet the Faces Behind ShutterSnap
         </h3>
 
-        <img
+        <Image
           src="/images/team.jpg"
           alt="Our Team"
+          width={500}
+          height={400}
           style={{
-            width: '100%',
-            maxWidth: '500px',
             borderRadius: '20px',
             boxShadow: '0 6px 20px rgba(0,0,0,0.1)',
+            width: '100%',
+            height: 'auto'
           }}
         />
       </div>

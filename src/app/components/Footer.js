@@ -1,4 +1,6 @@
-// components/Footer.js
+'use client'
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer style={{
@@ -13,7 +15,7 @@ export default function Footer() {
     }}>
       {/* Brand Info */}
       <div style={{ flex: '1 1 200px' }}>
-        <h3 style={{ fontFamily: `'Pacifico', cursive`, fontSize: '1.8rem', marginBottom: '1rem' }}>
+        <h3 style={{ fontFamily: `"Pacifico", cursive`, fontSize: '1.8rem', marginBottom: '1rem' }}>
           Shutter<span style={{ fontFamily: 'sans-serif' }}>Snap</span>
         </h3>
         <p>
@@ -25,11 +27,11 @@ export default function Footer() {
       <div style={{ flex: '1 1 200px' }}>
         <h4 style={{ marginBottom: '0.8rem' }}>Quick Links</h4>
         <ul style={{ listStyle: 'none', padding: 0, lineHeight: '1.8' }}>
-          <li><a href="/" style={linkStyle}>Home</a></li>
-          <li><a href="/services" style={linkStyle}>Services</a></li>
-          <li><a href="/gallery" style={linkStyle}>Gallery</a></li>
-          <li><a href="/faq" style={linkStyle}>FAQ</a></li>
-          <li><a href="/contact" style={linkStyle}>Contact / Booking</a></li>
+          <li><Link href="/" style={linkStyle}>Home</Link></li>
+          <li><Link href="/services" style={linkStyle}>Services</Link></li>
+          <li><Link href="/gallery" style={linkStyle}>Gallery</Link></li>
+          <li><Link href="/faq" style={linkStyle}>FAQ</Link></li>
+          <li><Link href="/contact" style={linkStyle}>Contact / Booking</Link></li>
         </ul>
       </div>
 
@@ -38,7 +40,7 @@ export default function Footer() {
         <h4 style={{ marginBottom: '0.8rem' }}>Get in Touch</h4>
         <p>Email: <a href="mailto:info@shuttersnap.com" style={linkStyle}>info@shuttersnap.com</a></p>
         <p>Phone: <a href="tel:+919999999999" style={linkStyle}>+91 99999 99999</a></p>
-        <p>Instagram: <a href="https://instagram.com/shuttersnap" target="_blank" style={linkStyle}>@shuttersnap</a></p>
+        <p>Instagram: <a href="https://instagram.com/shuttersnap" target="_blank" rel="noopener noreferrer" style={linkStyle}>@shuttersnap</a></p>
       </div>
 
       {/* Copyright */}

@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Link from 'next/link'
 
 export default function BookingCTA() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <section
@@ -19,14 +19,16 @@ export default function BookingCTA() {
         borderBottom: '2px solid #eee',
       }}
     >
-      <h3 style={{
-        letterSpacing: '1.5px',
-        textTransform: 'uppercase',
-        fontSize: '0.9rem',
-        color: '#ff6a00',
-        marginBottom: '0.8rem'
-      }}>
-        Let's Create Something Beautiful
+      <h3
+        style={{
+          letterSpacing: '1.5px',
+          textTransform: 'uppercase',
+          fontSize: '0.9rem',
+          color: '#ff6a00',
+          marginBottom: '0.8rem',
+        }}
+      >
+        Let’s Create Something Beautiful
       </h3>
 
       <h2
@@ -62,28 +64,28 @@ export default function BookingCTA() {
       </p>
 
       <Link href="/contact">
-  <span
-    style={{
-      backgroundColor: isHovered ? '#ff6a00' : '#222',
-      color: '#fff',
-      padding: '0.85rem 2rem',
-      borderRadius: '10px',
-      textDecoration: 'none',
-      fontWeight: '600',
-      fontSize: '1rem',
-      boxShadow: isHovered
-        ? '0 0 20px rgba(255, 106, 0, 0.5)'
-        : '0 4px 12px rgba(0, 0, 0, 0.2)',
-      transition: 'all 0.3s ease-in-out',
-      display: 'inline-block',
-      cursor: 'pointer',
-    }}
-    onMouseEnter={() => setIsHovered(true)}
-    onMouseLeave={() => setIsHovered(false)}
-  >
-    Book Now
-  </span>
-</Link>
+        <span
+          style={{
+            backgroundColor: isHovered ? '#ff6a00' : '#222',
+            color: '#fff',
+            padding: '0.85rem 2rem',
+            borderRadius: '10px',
+            textDecoration: 'none',
+            fontWeight: '600',
+            fontSize: '1rem',
+            boxShadow: isHovered
+              ? '0 0 20px rgba(255, 106, 0, 0.5)'
+              : '0 4px 12px rgba(0, 0, 0, 0.2)',
+            transition: 'all 0.3s ease-in-out',
+            display: 'inline-block',
+            cursor: 'pointer',
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          Book Now
+        </span>
+      </Link>
     </section>
   )
 }
