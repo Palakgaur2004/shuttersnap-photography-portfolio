@@ -29,7 +29,7 @@ export default function ImageSlider() {
     <div
       style={{
         position: 'relative',
-        height: '500px',
+        height: '300px',
         overflow: 'hidden',
       }}
       onMouseEnter={() => setPaused(true)}
