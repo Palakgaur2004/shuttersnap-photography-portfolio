@@ -1,5 +1,6 @@
 import './globals.css'
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import LayoutWrapper from './layout-wrapper'
 
 export const metadata = {
   title: 'ShutterSnap Photography',
@@ -10,19 +11,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Fonts for funky "Shutter" */}
         <link
           href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
           rel="stylesheet"
         />
-        {/* You can also add favicon, meta tags, etc. here */}
-
-        
       </head>
-      <body>
-        {children}
-          <SpeedInsights />
-        </body>
+      <body style={{ paddingTop: '80px', margin: 0 }}>
+        <LayoutWrapper>{children}</LayoutWrapper>
+        <SpeedInsights />
+      </body>
     </html>
   )
 }

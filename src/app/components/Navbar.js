@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -15,32 +14,29 @@ export default function Navbar() {
   }, [])
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+    <nav
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '97%',
+        width: '98%',
         zIndex: 1000,
         display: 'flex',
-        flexWrap: 'wrap',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '1rem 2rem',
-        transition: 'all 0.4s ease-in-out',
-        backgroundColor: scrolled ? '#ffffff' : 'transparent',
+        transition: 'all 0.3s ease-in-out',
+        backgroundColor: '#ffffff',
         boxShadow: scrolled ? '0 4px 12px rgba(0, 0, 0, 0.1)' : 'none',
+        borderBottom: '1px solid #eee',
       }}
     >
-      {/* Logo/Brand */}
+      {/* Brand Name */}
       <h1 style={{ fontSize: '1.8rem', margin: 0 }}>
         <span
           style={{
             fontFamily: `"Pacifico", cursive`,
-            color: scrolled ? '#000' : '#fff',
+            color: '#000',
           }}
         >
           Shutter
@@ -48,7 +44,7 @@ export default function Navbar() {
         <span
           style={{
             fontFamily: 'sans-serif',
-            color: scrolled ? '#000' : '#fff',
+            color: '#000',
           }}
         >
           Snap
@@ -67,7 +63,7 @@ export default function Navbar() {
           alignItems: 'center',
         }}
       >
-        {[
+        {[ 
           { label: 'Home', path: '/' },
           { label: 'Services', path: '/services' },
           { label: 'Gallery', path: '/gallery' },
@@ -78,7 +74,7 @@ export default function Navbar() {
             <Link href={item.path} passHref>
               <span
                 style={{
-                  color: scrolled ? '#000' : '#fff',
+                  color: '#000',
                   textDecoration: 'none',
                   fontWeight: 500,
                   fontSize: '1rem',
@@ -92,6 +88,6 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-    </motion.nav>
+    </nav>
   )
 }
