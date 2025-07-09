@@ -39,7 +39,7 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
       >
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Let’s Talk 📸
+          Let’s Talk 
         </h2>
         <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '1.5rem' }}>
           Got a project in mind or want to book a session? Fill out the form or contact us directly.

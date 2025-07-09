@@ -48,14 +48,14 @@ export default function AboutSection() {
           color: '#666',
           marginTop: '1.5rem',
         }}>
-          📌 We don’t just take photos — we preserve memories that matter. Our approach blends artistic storytelling with technical excellence, ensuring every image tells a tale you’ll want to relive again and again.
+          We don’t just take photos — we preserve memories that matter. Our approach blends artistic storytelling with technical excellence, ensuring every image tells a tale you’ll want to relive again and again.
         </p>
 
         <div style={{ marginTop: '2rem' }}>
-          <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#333' }}>✨ Why choose ShutterSnap?</h4>
+          <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#333' }}>Why choose ShutterSnap?</h4>
           <ul style={{
-            listStyleType: 'disc',
-            paddingLeft: '1.5rem',
+            listStyleType: 'none',
+            paddingLeft: '0rem',
             color: '#444',
             fontSize: '1rem',
             lineHeight: '1.6',

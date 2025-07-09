@@ -37,7 +37,7 @@ export default function Testimonials() {
           color: "#222",
         }}
       >
-        What Our Clients Say 💬
+        What Our Clients Say
       </motion.h2>
 
       <motion.div
