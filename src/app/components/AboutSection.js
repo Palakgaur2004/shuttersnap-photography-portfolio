@@ -55,7 +55,7 @@ export default function AboutSection() {
           <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#333' }}>Why choose ShutterSnap?</h4>
           <ul style={{
             listStyleType: 'none',
-            paddingLeft: '0rem',
+            paddingLeft: 'rem',
             color: '#444',
             fontSize: '1rem',
             lineHeight: '1.6',

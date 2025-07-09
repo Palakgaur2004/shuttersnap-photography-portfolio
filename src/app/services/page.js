@@ -6,7 +6,7 @@ import serviceData from '@/app/data/services'
 
 export default function ServicesPage() {
   return (
-    <div style={{ padding: '4rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
+    <div style={{ padding: '6rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

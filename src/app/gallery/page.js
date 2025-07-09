@@ -21,7 +21,7 @@ export default function GalleryPage() {
   return (
     <section
       style={{
-        padding: "0.1rem 2rem",
+        padding: "4rem 2rem",
         maxWidth: "1400px",
         margin: "0 auto",
         backgroundColor: "#fff",

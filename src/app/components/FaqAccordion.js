@@ -46,7 +46,7 @@ export default function FAQPage() {
 
   return (
     <section style={{
-      padding: '0.2rem 2rem',
+      padding: '5rem 2rem',
       maxWidth: '900px',
       margin: '0 auto',
       backgroundColor: '#fff'
