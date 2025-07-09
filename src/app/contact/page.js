@@ -1,7 +1,7 @@
-// app/contact/page.js
 'use client'
 import { useState } from 'react'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -32,7 +32,12 @@ export default function ContactPage() {
       }}
     >
       {/* Left Side */}
-      <div style={{ flex: '1 1 400px' }}>
+      <motion.div
+        style={{ flex: '1 1 400px' }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Let’s Talk 📸
         </h2>
@@ -58,11 +63,14 @@ export default function ContactPage() {
         <p style={{ fontStyle: 'italic', color: '#666' }}>
           “Capturing stories one frame at a time.”
         </p>
-      </div>
+      </motion.div>
 
       {/* Right Side Form */}
-      <form
+      <motion.form
         onSubmit={handleSubmit}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: '1 1 400px',
           backgroundColor: '#fafafa',
@@ -87,7 +95,7 @@ export default function ContactPage() {
           onChange={handleChange} required style={{ ...inputStyle, resize: 'vertical' }} />
 
         <button type="submit" style={buttonStyle}>Submit Booking</button>
-      </form>
+      </motion.form>
     </section>
   )
 }

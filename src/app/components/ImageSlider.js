@@ -22,7 +22,6 @@ export default function ImageSlider() {
         setIndex((prevIndex) => (prevIndex + 1) % images.length)
       }, delay)
     }
-
     return () => clearTimeout(timeoutRef.current)
   }, [index, paused])
 

@@ -1,5 +1,6 @@
-// components/AboutSection.js
+'use client'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export default function AboutSection() {
   return (
@@ -14,10 +15,16 @@ export default function AboutSection() {
     }}>
 
       {/* Left Side Content */}
-      <div style={{
-        flex: '1 1 450px',
-        maxWidth: '600px',
-      }}>
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        style={{
+          flex: '1 1 450px',
+          maxWidth: '600px',
+        }}
+      >
         <h2 style={{
           fontSize: '2rem',
           marginBottom: '1rem',
@@ -60,15 +67,21 @@ export default function AboutSection() {
             <li>Friendly, flexible, and client-first team</li>
           </ul>
         </div>
-      </div>
+      </motion.div>
 
       {/* Right Side Image */}
-      <div style={{
-        flex: '0.3 1 400px',
-        textAlign: 'center',
-        marginLeft: 'auto',
-        alignSelf: 'flex-start'
-      }}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+        style={{
+          flex: '0.3 1 400px',
+          textAlign: 'center',
+          marginLeft: 'auto',
+          alignSelf: 'flex-start'
+        }}
+      >
         <h3 style={{
           fontSize: '1.3rem',
           fontWeight: '500',
@@ -90,7 +103,7 @@ export default function AboutSection() {
             height: 'auto'
           }}
         />
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -1,4 +1,6 @@
-// components/Testimonials.js
+'use client'
+import { motion } from 'framer-motion'
+
 export default function Testimonials() {
   const testimonials = [
     {
@@ -23,7 +25,11 @@ export default function Testimonials() {
 
   return (
     <section style={{ padding: "4rem 2rem", backgroundColor: "#fff" }}>
-      <h2
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
         style={{
           textAlign: "center",
           fontSize: "2rem",
@@ -32,9 +38,13 @@ export default function Testimonials() {
         }}
       >
         What Our Clients Say 💬
-      </h2>
+      </motion.h2>
 
-      <div
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.2 }}
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -43,8 +53,13 @@ export default function Testimonials() {
         }}
       >
         {testimonials.map((testimonial, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             style={{
               backgroundColor: "#f5f5f5",
               padding: "2rem",
@@ -55,23 +70,20 @@ export default function Testimonials() {
               textAlign: "center",
               transition: "transform 0.3s",
             }}
-            
           >
-            {/* Profile Image */}
             <img
               src={testimonial.image}
               alt={testimonial.name}
               style={{
                 width: "300px",
                 height: "200px",
-                borderRadius: "5px", // ✅ square with slightly rounded corners
+                borderRadius: "5px",
                 objectFit: "cover",
                 marginBottom: "1rem",
                 boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
               }}
             />
 
-            {/* Feedback */}
             <p
               style={{
                 fontStyle: "italic",
@@ -84,7 +96,6 @@ export default function Testimonials() {
               “{testimonial.feedback}”
             </p>
 
-            {/* Client Name */}
             <p
               style={{
                 fontWeight: "600",
@@ -94,9 +105,9 @@ export default function Testimonials() {
             >
               — {testimonial.name}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

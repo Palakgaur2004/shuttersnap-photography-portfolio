@@ -1,5 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -13,7 +15,10 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
       style={{
         position: 'fixed',
         top: 0,
@@ -32,26 +37,36 @@ export default function Navbar() {
     >
       {/* Logo/Brand */}
       <h1 style={{ fontSize: '1.8rem', margin: 0 }}>
-        <span style={{
-          fontFamily: `'Pacifico', cursive`,
-          color: scrolled ? '#000' : '#fff'
-        }}>Shutter</span>
-        <span style={{
-          fontFamily: 'sans-serif',
-          color: scrolled ? '#000' : '#fff'
-        }}>Snap</span>
+        <span
+          style={{
+            fontFamily: `"Pacifico", cursive`,
+            color: scrolled ? '#000' : '#fff',
+          }}
+        >
+          Shutter
+        </span>
+        <span
+          style={{
+            fontFamily: 'sans-serif',
+            color: scrolled ? '#000' : '#fff',
+          }}
+        >
+          Snap
+        </span>
       </h1>
 
       {/* Navigation Links */}
-      <ul style={{
-        display: 'flex',
-        gap: '1.2rem',
-        listStyle: 'none',
-        margin: 0,
-        padding: 0,
-        flexWrap: 'wrap',
-        alignItems: 'center'
-      }}>
+      <ul
+        style={{
+          display: 'flex',
+          gap: '1.2rem',
+          listStyle: 'none',
+          margin: 0,
+          padding: 0,
+          flexWrap: 'wrap',
+          alignItems: 'center',
+        }}
+      >
         {[
           { label: 'Home', path: '/' },
           { label: 'Services', path: '/services' },
@@ -60,21 +75,23 @@ export default function Navbar() {
           { label: 'Contact / Booking', path: '/contact' },
         ].map((item, index) => (
           <li key={index}>
-            <a
-              href={item.path}
-              style={{
-                color: scrolled ? '#000' : '#fff',
-                textDecoration: 'none',
-                fontWeight: 500,
-                fontSize: '1rem',
-                padding: '0.3rem 0.6rem',
-              }}
-            >
-              {item.label}
-            </a>
+            <Link href={item.path} passHref>
+              <span
+                style={{
+                  color: scrolled ? '#000' : '#fff',
+                  textDecoration: 'none',
+                  fontWeight: 500,
+                  fontSize: '1rem',
+                  padding: '0.3rem 0.6rem',
+                  cursor: 'pointer',
+                }}
+              >
+                {item.label}
+              </span>
+            </Link>
           </li>
         ))}
       </ul>
-    </nav>
+    </motion.nav>
   )
 }
