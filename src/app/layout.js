@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body style={{ paddingTop: '80px', margin: 0 }}>
+      <body style={{ paddingTop: '0px', margin: 0 }}>
         <LayoutWrapper>{children}</LayoutWrapper>
         <SpeedInsights />
       </body>

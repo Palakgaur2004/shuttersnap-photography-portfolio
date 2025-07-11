@@ -28,9 +28,12 @@ export default function ImageSlider() {
   return (
     <div
       style={{
+        marginTop: '50px',
         position: 'relative',
-        height: '300px',
+        height: '500px',
         overflow: 'hidden',
+        alignItems: 'center',
+       
       }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
